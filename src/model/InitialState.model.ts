@@ -1,5 +1,7 @@
+import { User } from "./User.model";
+
 export class InitialState {
-    currentUser?: string;
+    currentUser?: User;
     signInModalVisible?: boolean;
     signUpModalVisible?: boolean;
 }

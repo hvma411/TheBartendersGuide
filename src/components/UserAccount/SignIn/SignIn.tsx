@@ -6,13 +6,19 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import Backdrop from '@mui/material/Backdrop';
 import IconButton from '@mui/material/IconButton';
 import CancelIcon from '@mui/icons-material/Cancel';
-import { setSignInModalVisibility } from '../../../redux/slice';
+import { setCurrentUser, setSignInModalVisibility } from '../../../redux/slice';
 import { useDispatch } from 'react-redux';
+import { User } from '../../../model/User.model';
 
 const SignIn = () => {
     const dispatch = useDispatch();
 
     const handleCloseModal = (): void => {
+        dispatch(setSignInModalVisibility(false));
+    }
+
+    const handleSignIn = (): void => {
+        dispatch(setCurrentUser(new User("test@test.pl", [])));
         dispatch(setSignInModalVisibility(false));
     }
 
@@ -75,12 +81,12 @@ const SignIn = () => {
                             style={{ color: 'black' }}
                         />
                         <Button
-                            type="submit"
+                            onClick={ handleSignIn }
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
                         >
-                            Sign Up
+                            Sign In
                         </Button>
                     </Box>
                 </Box>

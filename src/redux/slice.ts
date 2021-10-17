@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { InitialState } from '../model/InitialState.model';
 
 const initialState: InitialState = {
-    currentUser: "",
+    currentUser: undefined,
     signInModalVisible: false,
     signUpModalVisible: false,
 }

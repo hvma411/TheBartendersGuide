@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import LocalBarIcon from '@mui/icons-material/LocalBar';
 import { useSelector } from 'react-redux';
 import { InitialState } from '../../model/InitialState.model';
-import UserSignedButton from '../UserAccount/UserSignedButton/UserSignedButton';
+import UserSigned from '../UserAccount/UserSigned/UserSigned';
 import AuthNav from '../UserAccount/AuthNav/AuthNav';
 
 const Header = () => {
@@ -18,7 +18,7 @@ const Header = () => {
                 <Typography variant="h6" color="inherit" sx={{ flexGrow: 1 }}>
                     The Bartender's Guide
                 </Typography>
-                { currentUser ? <UserSignedButton /> : <AuthNav /> }
+                { currentUser ? <UserSigned /> : <AuthNav /> }
             </Toolbar>
         </AppBar>
     )

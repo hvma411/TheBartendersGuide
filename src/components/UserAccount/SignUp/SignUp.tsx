@@ -7,7 +7,8 @@ import Backdrop from '@mui/material/Backdrop';
 import IconButton from '@mui/material/IconButton';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { useDispatch } from 'react-redux';
-import { setSignUpModalVisibility } from '../../../redux/slice';
+import { setCurrentUser, setSignUpModalVisibility } from '../../../redux/slice';
+import { User } from '../../../model/User.model';
 
 
 const SignUp = () => {
@@ -17,8 +18,13 @@ const SignUp = () => {
         dispatch(setSignUpModalVisibility(false));
     }
 
+    const handleSignIn = (): void => {
+        dispatch(setCurrentUser(new User("test@test.pl", [])));
+        dispatch(setSignUpModalVisibility(false));
+    }
+
     return (
-        <Backdrop sx={{ color: '#fff', zIndex: (theme: any) => theme.zIndex.drawer + 1 }} open onClick={ handleCloseModal }>
+        <Backdrop sx={{ color: '#fff', zIndex: (theme: any) => theme.zIndex.drawer + 1 }} open>
             <Container 
                 component="main" 
                 maxWidth="xs"
@@ -84,7 +90,7 @@ const SignUp = () => {
                                 style={{ color: 'black' }}
                             />
                             <Button
-                                type="submit"
+                                onClick={ handleSignIn }
                                 fullWidth
                                 variant="contained"
                                 sx={{ mt: 3, mb: 2 }}
