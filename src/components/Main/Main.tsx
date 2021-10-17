@@ -1,8 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { InitialState } from '../../model/InitialState.model'
-import SignIn from '../UserAccount/SignIn/SignIn';
-import SignUp from '../UserAccount/SignUp/SignUp';
+import SignInModal from '../UserAccount/SignInModal/SignInModal';
+import SignUpModal from '../UserAccount/SignUpModal/SignUpModal';
+import TabsComponent from './Tabs/Tabs';
 
 const Main = () => {
 
@@ -12,8 +13,9 @@ const Main = () => {
 
     return (
         <>
-            { signUpModalVisible ? <SignUp /> : "" }
-            { signInModalVisible ? <SignIn /> : "" }
+            { signUpModalVisible ? <SignUpModal /> : "" }
+            { signInModalVisible ? <SignInModal /> : "" }
+            <TabsComponent/>
         </>
     )
 }

@@ -11,7 +11,7 @@ import { setCurrentUser, setSignUpModalVisibility } from '../../../redux/slice';
 import { User } from '../../../model/User.model';
 
 
-const SignUp = () => {
+const SignUpModal = () => {
     const dispatch = useDispatch();
 
     const handleCloseModal = (): void => {
@@ -104,4 +104,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp
+export default SignUpModal;

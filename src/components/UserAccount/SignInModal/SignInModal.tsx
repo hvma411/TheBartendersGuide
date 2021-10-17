@@ -10,7 +10,7 @@ import { setCurrentUser, setSignInModalVisibility } from '../../../redux/slice';
 import { useDispatch } from 'react-redux';
 import { User } from '../../../model/User.model';
 
-const SignIn = () => {
+const SignInModal = () => {
     const dispatch = useDispatch();
 
     const handleCloseModal = (): void => {
@@ -95,4 +95,4 @@ const SignIn = () => {
     )
 }
 
-export default SignIn
+export default SignInModal;

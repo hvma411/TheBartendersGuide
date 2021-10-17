@@ -12,7 +12,7 @@ const Header = () => {
     const currentUser = useSelector((state: InitialState) => state.currentUser)
 
     return (
-        <AppBar position="fixed">
+        <AppBar position="relative">
             <Toolbar>
                 <LocalBarIcon sx={{ mr: 2 }} />
                 <Typography variant="h6" color="inherit" sx={{ flexGrow: 1 }}>
